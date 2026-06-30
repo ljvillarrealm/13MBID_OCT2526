@@ -160,3 +160,6 @@ cython_debug/
 #.idea/
 
 mlruns
+
+# No incluir la ruta que simula el repositorio remoto de DVC
+.remote_storage/
