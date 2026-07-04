@@ -16,3 +16,13 @@ stages:
       - docs/output/03_tarjetas_distribucion_nivel_tarjeta.png
       - docs/output/04_correlaciones_creditos.png
       - docs/output/05_correlaciones_tarjetas.png
+
+  data_profile:
+    cmd: python src/data_profile.py
+    deps:
+      - src/data_profile.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+    outs:
+      - docs/output/reporte_verificacion_creditos.html
+      - docs/output/reporte_verificacion_tarjetas.html

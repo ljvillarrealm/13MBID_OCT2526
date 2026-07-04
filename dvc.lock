@@ -56,3 +56,27 @@ stages:
       hash: md5
       md5: 437e3b6dfda37713e34cd4e0a47c4622
       size: 104206
+  data_profile:
+    cmd: python src/data_profile.py
+    deps:
+    - path: data/raw/datos_creditos.csv
+      hash: md5
+      md5: 3b26edd22e8827f890d7cd32efe475b7
+      size: 663047
+    - path: data/raw/datos_tarjetas.csv
+      hash: md5
+      md5: 9e197c893925601cd447c81256e8cf07
+      size: 845190
+    - path: src/data_profile.py
+      hash: md5
+      md5: 63d748f297707bbbd8a68ae1840da93c
+      size: 1357
+    outs:
+    - path: docs/output/reporte_verificacion_creditos.html
+      hash: md5
+      md5: 3f41a1680d08584b59c0a6419338db3a
+      size: 3824610
+    - path: docs/output/reporte_verificacion_tarjetas.html
+      hash: md5
+      md5: f32659223e3d041626a17ceb595fcfb0
+      size: 3049169
