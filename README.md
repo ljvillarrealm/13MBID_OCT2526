@@ -1,14 +1,16 @@
-# 13MIBD Template
+# 13MIBD - Actividad Práctica 1 - Implementación XXXXXX
 
-Plantilla de repositorio para la asignatura 13MBID.  
+![barra escudo viu](.project_resources\barra_escudo_viu.png)
 
-**"Metodologías de Gestión de Proyectos de Big Data"**  
 *Master Universitario en Big Data y Ciencia de Datos  
 Universidad Internacional de Valencia*  
+**13MBID - Metodologías de Gestión de Proyectos de Big Data**  
+
+Actividad Práctica 1  
 
 Prof: Dr. Horacio Kuna  
-Estudiante:  Práctica 1 - Leonardo Villarreal  
-Dictado: OCT25-26
+Alumno: Leonardo Villarreal  
+Edición Octubre 25-26  
 
 ## Descripción del contenido
 
