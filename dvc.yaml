@@ -44,3 +44,12 @@ stages:
       - data/raw/datos_tarjetas.csv
     outs:
       - docs/output/reporte_calidad_datos_ge.html
+
+  data_processing:
+    cmd: python src/data_processing.py
+    deps:
+      - src/data_processing.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+    outs:
+      - data/processed/datos_integrados.csv
