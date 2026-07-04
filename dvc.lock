@@ -135,10 +135,14 @@ stages:
       size: 845190
     - path: src/data_processing.py
       hash: md5
-      md5: e877b873327ff6e84a2b413a36b00766
-      size: 9712
+      md5: 3a6b554ca4ae00ae98137771f1cb3e52
+      size: 10095
     outs:
     - path: data/processed/datos_integrados.csv
       hash: md5
       md5: 33cbc8fa4df44fb83af4f69d90ec9bfc
       size: 1990497
+    - path: docs/output/reporte_verificacion_integracion.html
+      hash: md5
+      md5: 3f2dff627bed24334a0aa355714d22b7
+      size: 3824839

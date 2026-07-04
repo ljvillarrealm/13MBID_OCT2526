@@ -81,7 +81,7 @@ def test_data_quality_ge():
         f"La situacion de vivienda debe ser una de las siguientes: {valid_vivienda}"
     )
 
-    # ############## (SECCION RETO PROPUESTO) ################
+    # ############## (SECCION RETO/EXTRA PROPUESTO) ################
     # Expectation 3: Verificar que el ingreso es un valor positivo
     # Atributo a analizar: Consistencia/Exactitud (a nivel de rango)
     add_expectation(

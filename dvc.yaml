@@ -53,3 +53,4 @@ stages:
       - data/raw/datos_tarjetas.csv
     outs:
       - data/processed/datos_integrados.csv
+      - docs/output/reporte_verificacion_integracion.html

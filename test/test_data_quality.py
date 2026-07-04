@@ -137,7 +137,7 @@ def test_integridad_referencial(datos_creditos, datos_tarjeta):
 
 
 
-    # ############## (SECCION RETO PROPUESTO) ################
+    # ############## (SECCION RETO/EXTRA PROPUESTO) ################
     # Validar unicidad de los identificadores de cliente en ambos datasets
     # Atributo a analizar: Consistencia (a nivel de unicidad de identificadores)
     assert datos_creditos["id_cliente"].is_unique, "Existen identificadores de cliente duplicados en el dataset de créditos"

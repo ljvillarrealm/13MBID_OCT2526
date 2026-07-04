@@ -15,6 +15,7 @@ Revisado y adaptado por: Leonardo Villarreal
 # Se importan las librerías necesarias y se suprimen las advertencias
 import pandas as pd
 #import numpy as np
+from ydata_profiling import ProfileReport
 import warnings
 
 warnings.filterwarnings('ignore', category=FutureWarning)
@@ -214,6 +215,12 @@ def process_data():
     # -------------------------------------------------------------------
     df_integrado.to_csv('data/processed/datos_integrados.csv', index=False)
 
+    # ############## (SECCION RETO/EXTRA PROPUESTO) ################
+    # Generación y exportación del reporte
+    profile_integrado = ProfileReport(
+        df_creditos, title="Reporte de verificación - Integración de datos: Etapa de Procesado"
+    )
+    profile_integrado.to_file("docs/output/reporte_verificacion_integracion.html")
 
 if __name__ == "__main__":
     process_data()
