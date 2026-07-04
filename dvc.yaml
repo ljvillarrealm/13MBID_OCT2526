@@ -1,0 +1,18 @@
+stages:
+  data_visualization:
+    cmd: python src/data_visualization.py # Apuntar aquí a tu script de visualización de datos
+    deps:
+      - src/data_visualization.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+    outs:
+      - docs/output/01_distribucion_variable_objetivo.png
+      - docs/output/02_creditos_distribucion_objetivo_credito.png
+      - docs/output/02_creditos_distribucion_situacion_vivienda.png
+      - docs/output/03_tarjetas_distribucion_estado_civil.png
+      - docs/output/03_tarjetas_distribucion_estado_cliente.png
+      - docs/output/03_tarjetas_distribucion_genero.png
+      - docs/output/03_tarjetas_distribucion_nivel_educativo.png
+      - docs/output/03_tarjetas_distribucion_nivel_tarjeta.png
+      - docs/output/04_correlaciones_creditos.png
+      - docs/output/05_correlaciones_tarjetas.png

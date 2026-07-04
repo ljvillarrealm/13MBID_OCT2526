@@ -1,0 +1,58 @@
+schema: '2.0'
+stages:
+  data_visualization:
+    cmd: python src/data_visualization.py
+    deps:
+    - path: data/raw/datos_creditos.csv
+      hash: md5
+      md5: 3b26edd22e8827f890d7cd32efe475b7
+      size: 663047
+    - path: data/raw/datos_tarjetas.csv
+      hash: md5
+      md5: 9e197c893925601cd447c81256e8cf07
+      size: 845190
+    - path: src/data_visualization.py
+      hash: md5
+      md5: 466bd59fe55c3d3f455ed480e3fd0685
+      size: 7896
+    outs:
+    - path: docs/output/01_distribucion_variable_objetivo.png
+      hash: md5
+      md5: 67756189b28c9ffdb1cc46a631ab7b04
+      size: 36793
+    - path: docs/output/02_creditos_distribucion_objetivo_credito.png
+      hash: md5
+      md5: aefd16e9c7ac674d219e4282990e6332
+      size: 37262
+    - path: docs/output/02_creditos_distribucion_situacion_vivienda.png
+      hash: md5
+      md5: e5b444ae9984c8bc287b65ff3923077d
+      size: 29745
+    - path: docs/output/03_tarjetas_distribucion_estado_civil.png
+      hash: md5
+      md5: 81e572b517149b1bb29228504d3842d1
+      size: 30534
+    - path: docs/output/03_tarjetas_distribucion_estado_cliente.png
+      hash: md5
+      md5: d0fd83590a4631bbf180021c1e2a12eb
+      size: 26199
+    - path: docs/output/03_tarjetas_distribucion_genero.png
+      hash: md5
+      md5: 5e326d6aa6a385229cf6004bb7a2db87
+      size: 18325
+    - path: docs/output/03_tarjetas_distribucion_nivel_educativo.png
+      hash: md5
+      md5: a6adb2af4f8b74750ffbfeb88b158bf5
+      size: 46889
+    - path: docs/output/03_tarjetas_distribucion_nivel_tarjeta.png
+      hash: md5
+      md5: 1a6239a9eac33ceeb52135f72b14b323
+      size: 23823
+    - path: docs/output/04_correlaciones_creditos.png
+      hash: md5
+      md5: 178e9aafd44b3184a4a06bbf0e3fa1f7
+      size: 155704
+    - path: docs/output/05_correlaciones_tarjetas.png
+      hash: md5
+      md5: 437e3b6dfda37713e34cd4e0a47c4622
+      size: 104206
