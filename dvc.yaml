@@ -26,3 +26,21 @@ stages:
     outs:
       - docs/output/reporte_verificacion_creditos.html
       - docs/output/reporte_verificacion_tarjetas.html
+
+  data_quality_pandera:
+    cmd: pytest --html=docs/output/reporte_calidad_datos_basico.html --self-contained-html test/test_data_quality.py -v || exit /b 0
+    deps:
+      - test/test_data_quality.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+    outs:
+      - docs/output/reporte_calidad_datos_basico.html
+
+  data_quality_ge:
+    cmd: pytest --html=docs/output/reporte_calidad_datos_ge.html --self-contained-html test/test_data_quality_ge.py -v || exit /b 0
+    deps:
+      - test/test_data_quality_ge.py
+      - data/raw/datos_creditos.csv
+      - data/raw/datos_tarjetas.csv
+    outs:
+      - docs/output/reporte_calidad_datos_ge.html
