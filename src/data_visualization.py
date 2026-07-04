@@ -42,7 +42,8 @@ warnings.filterwarnings("ignore", category=UserWarning)
 # Ruta relativa al script: ../docs/output_YYYYMMDD_HHMMSS
 TIMESTAMP = datetime.now().strftime("%Y%m%d_%H%M%S")
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(BASE_DIR, "..", "docs", f"output_{TIMESTAMP}")
+#OUTPUT_DIR = os.path.join(BASE_DIR, "..", "docs", f"output_{TIMESTAMP}")
+OUTPUT_DIR = os.path.join(BASE_DIR, "..", "docs", f"output")
 OUTPUT_DIR = os.path.normpath(OUTPUT_DIR)
 os.makedirs(OUTPUT_DIR, exist_ok=True)
  
@@ -61,11 +62,11 @@ def main():
     # -----------------------------------------------------------------------
  
     # Lectura de los datos de créditos
-    df_creditos = pd.read_csv("../data/raw/datos_creditos.csv", sep=";")
+    df_creditos = pd.read_csv("data/raw/datos_creditos.csv", sep=";")
     print(df_creditos.head(5))
  
     # Lectura de los datos de tarjetas
-    df_tarjetas = pd.read_csv("../data/raw/datos_tarjetas.csv", sep=";")
+    df_tarjetas = pd.read_csv("data/raw/datos_tarjetas.csv", sep=";")
     print(df_tarjetas.head(5))
  
     # -----------------------------------------------------------------------
