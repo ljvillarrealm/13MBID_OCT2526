@@ -96,12 +96,12 @@ def test_data_quality_ge():
         df_tarjetas["limite_credito_tc"].between(1000.0, 100000.0).all(),
         "El limite de credito debe estar entre 1,000 y 100,000"
     )
-    # Expectation 5: Verificar que la variable objetivo falta_pago solo contiene valores 'N' o 'S'
+    # Expectation 5: Verificar que la variable objetivo falta_pago solo contiene valores 'N' o 'Y'
     # Atributo a analizar: Exactitud (a nivel de categoría)
     add_expectation(
         "falta_pago_es_binaria",
-        df_creditos["falta_pago"].isin(['N', 'S']).all(),
-        "La variable objetivo falta_pago debe contener solo valores 'N' o 'S'"
+        df_creditos["falta_pago"].isin(['N', 'Y']).all(),
+        "La variable objetivo falta_pago debe contener solo valores 'N' o 'Y'"
     )
     # Expectation 6: Verificar que estado del cliente es una de las categorias validas
     # Atributo a analizar: Exactitud (a nivel de categoría)

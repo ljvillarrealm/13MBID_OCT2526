@@ -218,7 +218,7 @@ def process_data():
     # ############## (SECCION RETO/EXTRA PROPUESTO) ################
     # Generación y exportación del reporte
     profile_integrado = ProfileReport(
-        df_creditos, title="Reporte de verificación - Integración de datos: Etapa de Procesado"
+        df_integrado, title="Reporte de verificación - Integración de datos: Etapa de Procesado"
     )
     profile_integrado.to_file("docs/output/reporte_verificacion_integracion.html")
 
