@@ -94,13 +94,13 @@ stages:
       size: 845190
     - path: test/test_data_quality.py
       hash: md5
-      md5: 9725c65faf7f8a1db57953d6ef7ff869
-      size: 10996
+      md5: 701f16e07ac3b4f5491b1f48df22bb2c
+      size: 11002
     outs:
     - path: docs/output/reporte_calidad_datos_basico.html
       hash: md5
-      md5: db1803214f38d911f7d043e8a84d4a91
-      size: 50003
+      md5: 3c982f7fc256111ef88c1377322ab5e3
+      size: 50043
   data_quality_ge:
     cmd: pytest --html=docs/output/reporte_calidad_datos_ge.html 
       --self-contained-html test/test_data_quality_ge.py -v || exit /b 0
@@ -115,13 +115,13 @@ stages:
       size: 845190
     - path: test/test_data_quality_ge.py
       hash: md5
-      md5: b833f299895350ca5754492fe6462d54
-      size: 6089
+      md5: 26f8822f093b9fa3ff0af835d10414bb
+      size: 6101
     outs:
     - path: docs/output/reporte_calidad_datos_ge.html
       hash: md5
-      md5: 10c173e77f9dbbaa7690509d5d8f76a5
-      size: 42615
+      md5: 6b42ed82071a5cb8de61840d529f2ecf
+      size: 42633
   data_processing:
     cmd: python src/data_processing.py
     deps:
@@ -135,8 +135,8 @@ stages:
       size: 845190
     - path: src/data_processing.py
       hash: md5
-      md5: 3a6b554ca4ae00ae98137771f1cb3e52
-      size: 10095
+      md5: e63969bb7a5c1e929dbc493793d3c7df
+      size: 10101
     outs:
     - path: data/processed/datos_integrados.csv
       hash: md5
@@ -144,5 +144,5 @@ stages:
       size: 1990497
     - path: docs/output/reporte_verificacion_integracion.html
       hash: md5
-      md5: 3f2dff627bed24334a0aa355714d22b7
-      size: 3824839
+      md5: d40a4fe70425dcdf774aad4230371e51
+      size: 3824712

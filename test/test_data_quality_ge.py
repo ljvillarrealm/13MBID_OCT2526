@@ -116,12 +116,12 @@ def test_data_quality_ge():
     add_expectation(
         "id_cliente_es_unico_creditos",
         df_creditos["id_cliente"].is_unique,
-        "Existen identificadores de cliente duplicados en el dataset de créditos"
+        "No existen identificadores de cliente duplicados en el dataset de créditos"
     )
     add_expectation(
         "id_cliente_es_unico_tarjetas",
         df_tarjetas["id_cliente"].is_unique,
-        "Existen identificadores de cliente duplicados en el dataset de tarjetas"
+        "No existen identificadores de cliente duplicados en el dataset de tarjetas"
     )
     # Expectation 8: Verificar que el esatdo civil es una de las categorias validas
     # Atributo a analizar: Exactitud (a nivel de categoría)
