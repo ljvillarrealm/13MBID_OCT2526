@@ -1,4 +1,4 @@
 # Ignorar elementos de MLflow
-mlflow.db
+# mlflow.db
 mlruns/
 mlartifacts/
