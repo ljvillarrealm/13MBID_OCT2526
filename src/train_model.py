@@ -119,8 +119,8 @@ def preprocess(features_X):
 def train_model(
     data_path = "./data/processed/datos_integrados.csv",
     model_path = "./models/prod_model.pkl",
-    preprocess_path = "./models/prod_processor.pkl",
-    metrics_path = "./metrics/train_metrics.pkl"
+    preprocess_path = "./models/prod_preprocessor.pkl",
+    metrics_path = "./metrics/train_metrics.json"
 ):
     """"Se entrena el modelo objetivo"""
     
@@ -142,11 +142,12 @@ def train_model(
         y_test_eval = y_test.copy()
 
     # Preparacion del pipeline con el modelo
+    model_name='HistGradientBoostingClassifier'
     model = HistGradientBoostingClassifier(
         random_state=42,
         class_weight="balanced"   # permite compensar de manera interna el desbalance en 1 (Y) vs 0 (N)
     )
-
+    
     # Invocar preprocessor
     preprocessor = preprocess(features_X)
 
@@ -242,7 +243,7 @@ def train_model(
     # Registro en MLFlow
     signature = infer_signature(X_train, pipeline.predict(X_train))
 
-    with mlflow.start_run(run_name="Pipeline (prod)- HistGradientBoostingClassifier"):
+    with mlflow.start_run(run_name=f"Pipeline (prod) - {model_name}_{datetime.now().strftime("%Y%m%d_%H%M%S")}"):
         mlflow.log_params(model.get_params())
         mlflow.log_params({
             "train_samples":    len(X_train),
@@ -254,7 +255,7 @@ def train_model(
         mlflow.log_artifact(cm_path)
         mlflow.sklearn.log_model(
             pipeline,
-            name="model",
+            name=model_name,
             signature=signature,
             skops_trusted_types=[ # De esta maner se evita el error: MlflowException: The saved sklearn model references untrusted types. If you are sure loading these types is safe, set the 'skops_trusted_types' parameter when calling 'log_model' or 'save_model' to the list of trusted types.
                 "imblearn.pipeline.Pipeline",
@@ -270,7 +271,7 @@ def train_model(
     Path(metrics_path).parent.mkdir(parents=True, exist_ok=True)
 
     joblib.dump(pipeline, model_path)
-    joblib.dump(pipeline.named_steps["prep"], model_path)
+    joblib.dump(pipeline.named_steps["prep"], preprocess_path)
 
     # Guardar métricas
     with open(metrics_path, 'w') as f:
