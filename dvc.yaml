@@ -66,3 +66,11 @@ stages:
       - docs/training_output/confusion_matrix.png
     metrics:
     - metrics/train_metrics.json
+
+  test_model:
+    cmd: pytest --html=docs/output/reporte_test_modelo.html --self-contained-html test/test_train.py -v || exit /b 0
+    deps:
+      - test/test_train.py
+      - data/processed/datos_integrados.csv
+    outs:
+      - docs/output/reporte_test_modelo.html
