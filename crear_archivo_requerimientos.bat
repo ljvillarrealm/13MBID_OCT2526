@@ -17,4 +17,5 @@ echo great_expectations >> config/requirements.txt
 echo fastapi >> config/requirements.txt
 echo uvicorn >> config/requirements.txt
 echo plotly >> config/requirements.txt
+echo imblearn >> config/requirements.txt
 @echo "Archivo generado en el directorio config."
