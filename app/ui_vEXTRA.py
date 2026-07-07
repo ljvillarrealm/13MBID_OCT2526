@@ -17,7 +17,9 @@ with st.sidebar:
     st.write("""
     1. Ingrese los datos de cliente en el formulario.
     2. Haga click en el botón "Predecir"  para obtener la probabilidad de mora en créditos.
-    3. Revise los resultados y la infdromación del modelo.
+    3. Revise los resultados y la información del modelo.
+             
+    Elaborado por (💜 DATA) ljvillarrealm para proyecto 13MBID
     """)
     st.header("Configuración de la API")
     api_url = st.text_input(
